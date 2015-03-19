@@ -14,6 +14,9 @@ public class PinMapSearch {
      * 
      * array contendo informaçoes sobre os pinos
      */
+    public static final String INPUT = "in";
+    public static final String OUTPUT = "out";
+    
     String pinsHDMI[][]= {
         {null,"VCC-5V"},
         {"11","ph15"},
@@ -22,6 +25,25 @@ public class PinMapSearch {
         {"9" ,"pb19"},
         {"9" ,"pb19"},
     };
+    
+    public boolean importPin(int pin, String direction){
+        int index = 0;
+        boolean isFound = false;
+        while(index <= pinsHDMI.length|| !isFound){
+            if(String.valueOf(pin).equals(pinsHDMI[index][0]))
+                isFound = true;
+            else
+                ++index;
+        }
+        
+        if(isFound){
+            
+            return true;
+        }
+        else
+        return false;
+    }
+    
     
     
 }
